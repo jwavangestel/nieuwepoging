@@ -1,0 +1,31 @@
+<template>
+    <div class="board">
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style scoped>
+
+.task {
+  @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 bg-white text-grey-darkest no-underline;
+}
+
+.column {
+  @apply bg-grey-light p-2 mr-4 text-left shadow ;
+  min-width: 350px;
+}
+.board {
+  @apply p-4 bg-teal-dark h-full overflow-auto;
+}
+
+.task-bg {
+  @apply absolute;
+  background: rgba(0,0,0,0.5);
+}
+
+</style>

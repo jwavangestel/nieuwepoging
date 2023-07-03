@@ -1,10 +1,6 @@
 <template>
     <div class="board">
-      <form @submit.prevent="addItemAndClear(todo)">
-
-        <input v-model="todo" type="text" />
-        <button>Add</button>
-      </form>
+      {{ store }}
     </div>
 </template>
 
@@ -12,17 +8,17 @@
 import { ref } from 'vue';
 import { useTodoListStore } from '@/stores/todoList'
  
-const todo = ref('')
+//const todo = ref('')
 
 const store = useTodoListStore()
 
-function addItemAndClear(item) {
-  if (item.lenght === 0) {
-    return
-  }
-  store.addTodo(item)
-  todo.value = ''
-}
+//function addItemAndClear(item) {
+//  if (item.lenght === 0) {
+//    return
+//  }
+//  store.addTodo(item)
+//  todo.value = ''
+//}
       
 </script>
 

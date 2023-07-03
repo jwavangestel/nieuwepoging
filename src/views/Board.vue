@@ -1,6 +1,22 @@
 <template>
     <div class="board">
-      {{ store }}
+      <div class="flex flex-row items-start">
+          <div class="column" v-for="(column, $columnIdex) of board.board.columns" :key="$columnIdex" > 
+            <div class="flex items-center mb-2 font-bold">
+              {{ column.name }}
+            </div>
+            <div class="list-reset">
+              <div class="task" v-for="(task, $taskIndex) of column.tasks" :key="$taskIndex">
+                <span class="w-full flex-no-shrink font-bold">
+                  {{ task.name }}
+                </span>
+                <p v-if="task.description"  class="w-full flex-no-shrink mt-1 test-sm">
+                  {{ task.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
 </template>
 
@@ -10,7 +26,7 @@ import { useTodoListStore } from '@/stores/todoList'
  
 //const todo = ref('')
 
-const store = useTodoListStore()
+const board = useTodoListStore()
 
 //function addItemAndClear(item) {
 //  if (item.lenght === 0) {
